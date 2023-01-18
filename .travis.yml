@@ -16,10 +16,19 @@ before_script:
       #
 script:
   - docker --version # print the version for logging
+<<<<<<< HEAD
   - docker build -t udapi .
   - docker tag udapi linuxtitan/udapi:latest
+=======
+  - docker build -t simple-node .
+  - docker tag simple-node YOUR_DOCKER_HUB/simple-node:latest
+>>>>>>> 6bed4598c7ebb5f1eb1e23d7f2947f39ee9c6c1e
       #
       #           # Tasks to perform after the process is successful. Formatting the Docker username and password as below enables you to programmatically log in without having the password exposed in logs.
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+<<<<<<< HEAD
   - docker push linuxtitan/udapi
+=======
+  - docker push YOUR_DOCKER_HUB/simple-node
+>>>>>>> 6bed4598c7ebb5f1eb1e23d7f2947f39ee9c6c1e
